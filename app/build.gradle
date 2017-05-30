@@ -19,6 +19,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'WEATHER_URL', apiProps['WEATHER_URL']
+        buildConfigField 'String', 'GITHUB_URL', apiProps['GITHUB_URL']
     }
     buildTypes {
         debug {
@@ -57,6 +58,11 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile "com.android.support:support-annotations:$rootProject.supportVersion"
+    compile "android.arch.persistence.room:runtime:$rootProject.archVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.archVersion"
+    compile "android.arch.lifecycle:runtime:$rootProject.archVersion"
+    compile "android.arch.lifecycle:extensions:$rootProject.archVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archVersion"
 
     // DI
     compile "com.google.dagger:dagger:$rootProject.daggerVersion"
@@ -86,6 +92,9 @@ dependencies {
 
     // Timber
     compile "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    //SharedPreferences
+    compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC2'
 }
 repositories {
     mavenCentral()

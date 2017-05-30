@@ -7,7 +7,7 @@ import com.squareup.leakcanary.LeakCanary
 /**
  * Created by nicholaspark on 5/9/17.
  */
-class SeoulApplication : Application() {
+open class SeoulApplication : Application() {
 
     /**
      *  Build the component
